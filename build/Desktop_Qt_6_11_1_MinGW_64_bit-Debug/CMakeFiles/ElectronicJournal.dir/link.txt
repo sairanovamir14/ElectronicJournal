@@ -1,0 +1,3 @@
+C:\Qt\Tools\CMake_64\bin\cmake.exe -E rm -f CMakeFiles\ElectronicJournal.dir/objects.a
+C:\Qt\Tools\mingw1310_64\bin\ar.exe qc CMakeFiles\ElectronicJournal.dir/objects.a @CMakeFiles\ElectronicJournal.dir\objects1.rsp
+C:\Qt\Tools\mingw1310_64\bin\g++.exe -g -mwindows -Wl,--whole-archive CMakeFiles\ElectronicJournal.dir/objects.a -Wl,--no-whole-archive -o ElectronicJournal.exe -Wl,--out-implib,libElectronicJournal.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\ElectronicJournal.dir\linkLibs.rsp

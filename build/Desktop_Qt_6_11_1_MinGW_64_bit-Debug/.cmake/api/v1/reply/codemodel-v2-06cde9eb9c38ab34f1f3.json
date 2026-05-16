@@ -1,0 +1,79 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-a2f2a6f4e72c6aee80c8.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "ElectronicJournal",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ElectronicJournal::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ElectronicJournal-Debug-20b4aa4ad6fcadc1cf13.json",
+					"name" : "ElectronicJournal",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ElectronicJournal_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ElectronicJournal_autogen-Debug-b99587c36042547854b4.json",
+					"name" : "ElectronicJournal_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ElectronicJournal_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ElectronicJournal_autogen_timestamp_deps-Debug-ad41e4cdb95f201829aa.json",
+					"name" : "ElectronicJournal_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "D:/ElectronicJournal/ElectronicJournal/build/Desktop_Qt_6_11_1_MinGW_64_bit-Debug",
+		"source" : "D:/ElectronicJournal/ElectronicJournal"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}
