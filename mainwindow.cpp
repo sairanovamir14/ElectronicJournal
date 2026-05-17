@@ -12,6 +12,9 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
+    // фиксированный размер окна
+    setFixedSize(1200, 750);
+
     // стартовая страница
     ui->stackedWidget->setCurrentWidget(ui->page_1);
 
@@ -19,7 +22,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     loadTeacherJournal();
 
-    // проверка баллов 0-100
+    // проверка баллов
     connect(ui->teacherTable,
             &QTableWidget::cellChanged,
             this,
@@ -107,15 +110,34 @@ void MainWindow::loadStudentJournal()
     ui->studentTable->setEditTriggers(
         QAbstractItemView::NoEditTriggers);
 
-    // нормальные размеры колонок
+    // размеры колонок
     ui->studentTable->horizontalHeader()
         ->setSectionResizeMode(QHeaderView::Interactive);
 
-    ui->studentTable->setColumnWidth(0, 250);
+    // ширина колонки предметов
+    ui->studentTable->setColumnWidth(0, 320);
+
+    // ширина колонок с датами
+    for(int i = 1; i < 6; i++)
+    {
+        ui->studentTable->setColumnWidth(i, 90);
+    }
 
     // высота строк
     ui->studentTable->verticalHeader()
-        ->setDefaultSectionSize(35);
+        ->setDefaultSectionSize(55);
+
+    // высота заголовка
+    ui->studentTable->horizontalHeader()
+        ->setFixedHeight(50);
+
+    // шрифт
+    QFont font = ui->studentTable->font();
+    font.setPointSize(13);
+
+    ui->studentTable->setFont(font);
+
+    ui->studentTable->horizontalHeader()->setFont(font);
 }
 
 void MainWindow::loadTeacherJournal()
@@ -165,15 +187,34 @@ void MainWindow::loadTeacherJournal()
         ui->teacherTable->setItem(i, 0, nameItem);
     }
 
-    // нормальные размеры колонок
+    // размеры колонок
     ui->teacherTable->horizontalHeader()
         ->setSectionResizeMode(QHeaderView::Interactive);
 
-    ui->teacherTable->setColumnWidth(0, 300);
+    // ширина колонки ФИО
+    ui->teacherTable->setColumnWidth(0, 350);
+
+    // ширина колонок дат
+    for(int i = 1; i < 6; i++)
+    {
+        ui->teacherTable->setColumnWidth(i, 90);
+    }
 
     // высота строк
     ui->teacherTable->verticalHeader()
-        ->setDefaultSectionSize(35);
+        ->setDefaultSectionSize(55);
+
+    // высота заголовка
+    ui->teacherTable->horizontalHeader()
+        ->setFixedHeight(50);
+
+    // шрифт
+    QFont font = ui->teacherTable->font();
+    font.setPointSize(13);
+
+    ui->teacherTable->setFont(font);
+
+    ui->teacherTable->horizontalHeader()->setFont(font);
 }
 
 void MainWindow::on_loginButton_clicked()
@@ -234,7 +275,7 @@ void MainWindow::on_subjectsListWidget_itemClicked(QListWidgetItem *item)
 
 void MainWindow::checkGradeChange(int row, int column)
 {
-    // ФИО не трогаем
+    // ФИО не редактируем
     if(column == 0)
         return;
 
@@ -255,13 +296,13 @@ void MainWindow::checkGradeChange(int row, int column)
         return;
     }
 
-    // меньше 0
+    // минимум
     if(value < 0)
     {
         item->setText("0");
     }
 
-    // больше 100
+    // максимум
     if(value > 100)
     {
         item->setText("100");
